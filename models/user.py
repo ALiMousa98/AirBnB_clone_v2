@@ -10,3 +10,5 @@ class User(BaseModel):
     password = Column(String(128))
     first_name = Column(String(128))
     last_name = Column(String(128))
+
+    places = relationship("Place", back_populates='User',cascade="all, delete, delete-orphan")
